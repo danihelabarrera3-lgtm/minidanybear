@@ -1,0 +1,1114 @@
+
+/* =========================================
+   MINI BEAR 🧸
+   Tienda de ropa y accesorios para bebés
+   ========================================= */
+
+/* 1. CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --rosa: #ffb6d5;
+    --rosa-fuerte: #ff78b7;
+    --lila: #d9c2ff;
+    --azul: #b9e8ff;
+    --amarillo: #fff0a8;
+    --verde: #c8f7dc;
+    --blanco: #ffffff;
+    --texto: #59465c;
+    --sombra: 0 10px 30px rgba(116, 80, 130, 0.12);
+    --radio: 24px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: var(--texto);
+    background: linear-gradient(
+        135deg,
+        #fff8fc,
+        #fffdf3,
+        #f5faff
+    );
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background 0.6s ease, color 0.6s ease;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+section {
+    padding: 75px 7%;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+::selection {
+    background: #ffc5e2;
+    color: #67415b;
+}
+
+/* 2. ENCABEZADO Y MENÚ */
+
+.site-header {
+    width: 100%;
+    min-height: 85px;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    border-bottom: 2px solid rgba(255, 182, 213, 0.35);
+    box-shadow: 0 4px 20px rgba(100, 70, 100, 0.06);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #e96ba7;
+    font-size: 1.7rem;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.logo span {
+    font-size: 2rem;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.navigation a {
+    padding: 10px 14px;
+    border-radius: 30px;
+    font-size: 0.94rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: #ffffff;
+    background: linear-gradient(120deg, #ff91c5, #b9a0ff);
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    border-radius: 12px;
+    padding: 9px 12px;
+    background: #ffe0ef;
+    color: #9c4b79;
+    font-size: 1.5rem;
+}
+
+/* 3. BOTONES */
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    border-radius: 35px;
+    padding: 13px 23px;
+    background: linear-gradient(120deg, #ff9acb, #c2a5ff);
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 0 7px 18px rgba(226, 123, 179, 0.2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(226, 123, 179, 0.3);
+}
+
+.btn-secondary {
+    background: #ffffff;
+    color: #bd6496;
+    border: 2px solid #ffc3df;
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* 4. PORTADA PRINCIPAL */
+
+.hero {
+    min-height: 540px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 10% 20%, #ffe1ef 0, transparent 30%),
+        radial-gradient(circle at 85% 80%, #e2d7ff 0, transparent 32%),
+        linear-gradient(135deg, #fff8fc, #fffdf4);
+}
+
+.hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.6rem, 6vw, 5rem);
+    color: #d966a0;
+    margin-bottom: 22px;
+    letter-spacing: -2px;
+}
+
+.hero-content h1 span {
+    color: #a58ae8;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    max-width: 550px;
+    margin-bottom: 25px;
+}
+
+.hero-content .eyebrow {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 8px 15px;
+    border-radius: 25px;
+    background: #ffffff;
+    color: #b66a9b;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: var(--sombra);
+}
+
+.hero-art {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-art img {
+    width: min(100%, 420px);
+    max-height: 420px;
+    object-fit: contain;
+    border-radius: 35px;
+    filter: drop-shadow(0 20px 20px rgba(150, 100, 150, 0.13));
+    animation: bearFloat 4s ease-in-out infinite;
+}
+
+.hero-art .floating-decoration {
+    position: absolute;
+    font-size: 2.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-art .decoration-one {
+    top: 10%;
+    left: 5%;
+}
+
+.hero-art .decoration-two {
+    right: 5%;
+    bottom: 12%;
+    animation-delay: 0.8s;
+}
+
+/* 5. TEXTOS Y ENCABEZADOS DE SECCIÓN */
+
+.section-heading {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 38px;
+}
+
+.section-heading p {
+    font-size: 1.02rem;
+    color: #806b83;
+}
+
+.section-tag {
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 30px;
+    background: #ffe3f0;
+    color: #b75289;
+    font-weight: bold;
+    font-size: 0.86rem;
+    margin-bottom: 13px;
+}
+
+/* 6. SELECTOR DE CLIMAS Y TEMAS */
+
+.weather-section {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.weather-section h2 {
+    color: #9b72bd;
+}
+
+.theme-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 28px auto 0;
+    max-width: 1000px;
+}
+
+.theme-btn {
+    border: 2px solid transparent;
+    border-radius: 35px;
+    padding: 12px 18px;
+    background: #ffffff;
+    color: #69536e;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(100, 70, 100, 0.08);
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    transform: translateY(-4px);
+    border-color: #ffc0df;
+}
+
+.theme-btn.active {
+    background: linear-gradient(120deg, #ffb4d7, #c8b2ff);
+    color: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 7px 20px rgba(190, 130, 190, 0.2);
+}
+
+/* 7. ESCENA MÁGICA */
+
+.magic-scene {
+    min-height: 310px;
+    margin: 30px auto 0;
+    max-width: 1150px;
+    border-radius: 35px;
+    padding: 35px;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffdfef, #e8e0ff, #d9f4ff);
+    box-shadow: var(--sombra);
+    transition: background 0.7s ease;
+}
+
+.scene-message {
+    position: relative;
+    z-index: 3;
+    max-width: 650px;
+    text-align: center;
+}
+
+.scene-message h3 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: #8d5da8;
+    margin: 12px 0;
+}
+
+.scene-message p {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+#sceneEmoji {
+    display: block;
+    font-size: clamp(3rem, 8vw, 5rem);
+    animation: float 3s ease-in-out infinite;
+}
+
+.scene-decoration {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    pointer-events: none;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+.scene-decoration span {
+    animation: float 4s ease-in-out infinite;
+}
+
+.scene-decoration span:nth-child(even) {
+    animation-delay: 1s;
+}
+
+.magic-effects {
+    position: absolute;
+    z-index: 5;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.magic-particle {
+    position: absolute;
+    top: -45px;
+    left: var(--left, 50%);
+    font-size: var(--size, 22px);
+    opacity: 0.9;
+    animation: particleFall var(--duration, 5s) linear forwards;
+    filter: drop-shadow(0 2px 4px rgba(80, 50, 80, 0.15));
+}
+
+/* 8. TEMAS DEL MUNDO MÁGICO */
+
+/* Arcoíris */
+.theme-rainbow .magic-scene {
+    background: linear-gradient(
+        135deg,
+        #ffd5e9,
+        #fff0b8,
+        #c9f7e3,
+        #cce9ff,
+        #e3d1ff
+    );
+    background-size: 250% 250%;
+    animation: rainbowGlow 8s ease infinite;
+}
+
+/* Noche */
+.theme-dark {
+    background: #17172d;
+    color: #f5eaff;
+}
+
+.theme-dark .site-header {
+    background: rgba(28, 25, 53, 0.94);
+    border-color: #5c4b87;
+}
+
+.theme-dark .logo {
+    color: #f5b6ed;
+}
+
+.theme-dark .navigation a {
+    color: #f4eaff;
+}
+
+.theme-dark .navigation a:hover,
+.theme-dark .navigation a.active {
+    color: #ffffff;
+}
+
+.theme-dark .hero {
+    background:
+        radial-gradient(circle at 80% 20%, #44356c, transparent 40%),
+        linear-gradient(135deg, #1e1d3c, #30264b);
+}
+
+.theme-dark .hero-content h1,
+.theme-dark .hero-content h1 span,
+.theme-dark .weather-section h2,
+.theme-dark h2 {
+    color: #f4b6ed;
+}
+
+.theme-dark .hero-content p,
+.theme-dark .section-heading p {
+    color: #e0d3f0;
+}
+
+.theme-dark .hero-content .eyebrow,
+.theme-dark .theme-btn {
+    background: #393052;
+    color: #f5eaff;
+}
+
+.theme-dark .weather-section {
+    background: rgba(25, 23, 48, 0.8);
+}
+
+.theme-dark .magic-scene {
+    background: linear-gradient(135deg, #17172d, #3c2b68, #152d50);
+    color: #ffffff;
+}
+
+.theme-dark .scene-message h3 {
+    color: #ffe0ff;
+}
+
+.theme-dark .products-section,
+.theme-dark .promise-section {
+    background: #211d39;
+}
+
+.theme-dark .product-card,
+.theme-dark .promise-card {
+    background: #332a4c;
+    color: #f7edff;
+}
+
+.theme-dark .product-info p,
+.theme-dark .promise-card p {
+    color: #e1d4ed;
+}
+
+.theme-dark .cta-section {
+    background: linear-gradient(135deg, #3e2b62, #653c70);
+}
+
+.theme-dark .site-footer {
+    background: #151329;
+    color: #eee5ff;
+}
+
+/* Lluvia */
+.theme-rain .magic-scene {
+    background: linear-gradient(135deg, #c7d7e9, #b4c9df, #e0e8f3);
+}
+
+.theme-rain .scene-message h3 {
+    color: #4c6c8e;
+}
+
+/* Nieve */
+.theme-snow .magic-scene {
+    background: linear-gradient(135deg, #e5f8ff, #c8eaff, #f7fbff);
+}
+
+.theme-snow .scene-message h3 {
+    color: #4f88b6;
+}
+
+/* Otoño */
+.theme-autumn .magic-scene {
+    background: linear-gradient(135deg, #ffe1bb, #ffc9a5, #f9e8ba);
+}
+
+.theme-autumn .scene-message h3 {
+    color: #a85c38;
+}
+
+/* Primavera */
+.theme-spring .magic-scene {
+    background: linear-gradient(135deg, #d5f7dc, #ffe0f1, #e6ddff);
+}
+
+.theme-spring .scene-message h3 {
+    color: #588d6d;
+}
+
+/* 9. CATÁLOGO DE PRODUCTOS */
+
+.products-section {
+    background: #fffafc;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 35px;
+}
+
+.product-card {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: var(--radio);
+    background: #ffffff;
+    box-shadow: var(--sombra);
+    border: 2px solid rgba(255, 199, 226, 0.4);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 18px 35px rgba(140, 95, 140, 0.17);
+}
+
+.product-image {
+    height: 230px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffe4f1, #e5ddff);
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+.product-label {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    z-index: 2;
+    padding: 6px 11px;
+    border-radius: 25px;
+    background: #ffffff;
+    color: #c45d97;
+    font-size: 0.78rem;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(80, 50, 80, 0.1);
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    color: #9a6398;
+    font-size: 1.12rem;
+    margin-bottom: 9px;
+}
+
+.product-info p {
+    font-size: 0.92rem;
+    color: #806f82;
+}
+
+.product-price {
+    display: block;
+    margin: 12px 0;
+    color: #e56ca7;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.product-link {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 9px 15px;
+    border-radius: 25px;
+    background: #ffe5f1;
+    color: #b45187;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.25s ease;
+}
+
+.product-link:hover {
+    color: #ffffff;
+    background: #e98bb9;
+    transform: translateY(-2px);
+}
+
+/* 10. SECCIÓN DE BENEFICIOS */
+
+.promise-section {
+    background: linear-gradient(135deg, #fff5fa, #f8f3ff);
+}
+
+.promise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.promise-card {
+    text-align: center;
+    padding: 30px 22px;
+    background: #ffffff;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease;
+}
+
+.promise-card:hover {
+    transform: translateY(-7px);
+}
+
+.promise-card .promise-icon {
+    display: block;
+    font-size: 2.7rem;
+    margin-bottom: 15px;
+}
+
+.promise-card h3 {
+    color: #b16b9d;
+    margin-bottom: 10px;
+}
+
+.promise-card p {
+    color: #806f82;
+    margin-bottom: 0;
+}
+
+/* 11. BANNER FINAL */
+
+.cta-section {
+    text-align: center;
+    background: linear-gradient(120deg, #ffc8e2, #d7c9ff, #c8ecff);
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.cta-section h2 {
+    color: #83538b;
+}
+
+.cta-section p {
+    max-width: 650px;
+    margin: 0 auto 22px;
+}
+
+/* 12. PIE DE PÁGINA */
+
+.site-footer {
+    padding: 35px 7%;
+    background: #59465f;
+    color: #ffffff;
+    text-align: center;
+}
+
+.site-footer .logo {
+    color: #ffd1e8;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.site-footer p {
+    margin: 5px 0;
+    font-size: 0.92rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 18px 0;
+}
+
+.footer-links a {
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ffc6e4;
+}
+
+/* 13. ESTILOS PARA LAS DEMÁS PÁGINAS */
+
+.page-hero {
+    text-align: center;
+    padding: 85px 7%;
+    background: linear-gradient(135deg, #ffe3f0, #e6ddff, #d9f3ff);
+}
+
+.page-hero h1 {
+    color: #bc6da4;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    margin-bottom: 15px;
+}
+
+.page-hero p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.content-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-card {
+    background: #ffffff;
+    border-radius: var(--radio);
+    padding: 30px;
+    margin-bottom: 24px;
+    box-shadow: var(--sombra);
+}
+
+.content-card h2,
+.content-card h3 {
+    color: #b16b9d;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/* Formularios de contacto */
+
+.contact-form {
+    display: grid;
+    gap: 16px;
+    max-width: 700px;
+    margin: 25px auto;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 13px 15px;
+    border: 2px solid #f1d5e7;
+    border-radius: 14px;
+    outline: none;
+    background: #fffafd;
+    color: #59465c;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    border-color: #d89ac4;
+    box-shadow: 0 0 0 4px rgba(216, 154, 196, 0.15);
+}
+
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* Mensajes de formularios */
+
+.form-message {
+    padding: 12px 15px;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+.form-message.success {
+    background: #dff8e8;
+    color: #27633c;
+}
+
+.form-message.error {
+    background: #ffe1e5;
+    color: #9b3546;
+}
+
+/* 14. ANIMACIONES */
+
+@keyframes bearFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-13px);
+    }
+}
+
+@keyframes rainbowGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes particleFall {
+    0% {
+        transform: translate3d(0, -20px, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate3d(35px, 370px, 0) rotate(300deg);
+        opacity: 0;
+    }
+}
+
+@keyframes sparkle {
+    0% {
+        transform: scale(0.4);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+}
+
+/* 15. ADAPTACIÓN A TABLETAS */
+
+@media (max-width: 1050px) {
+    .site-header {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .navigation {
+        gap: 3px;
+    }
+
+    .navigation a {
+        padding: 9px 10px;
+        font-size: 0.88rem;
+    }
+
+    .hero {
+        gap: 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .product-image {
+        height: 260px;
+    }
+}
+
+/* 16. ADAPTACIÓN A CELULARES */
+
+@media (max-width: 760px) {
+    section {
+        padding: 55px 5%;
+    }
+
+    .site-header {
+        min-height: 75px;
+        padding: 12px 5%;
+    }
+
+    .logo {
+        font-size: 1.45rem;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navigation {
+        display: none;
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+        padding: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        background: #fffafd;
+        box-shadow: 0 12px 20px rgba(100, 70, 100, 0.1);
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    .navigation a {
+        text-align: center;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .theme-dark .navigation {
+        background: #211d39;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 60px;
+        padding-bottom: 50px;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-content h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero-art {
+        min-height: 260px;
+    }
+
+    .hero-art img {
+        max-height: 300px;
+    }
+
+    .theme-buttons {
+        gap: 9px;
+    }
+
+    .theme-btn {
+        padding: 10px 13px;
+        font-size: 0.88rem;
+    }
+
+    .magic-scene {
+        min-height: 300px;
+        padding: 25px 15px;
+        border-radius: 25px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .product-image {
+        height: 190px;
+    }
+
+    .product-info {
+        padding: 14px;
+    }
+
+    .product-info h3 {
+        font-size: 1rem;
+    }
+
+    .product-info p {
+        font-size: 0.85rem;
+    }
+
+    .product-price {
+        font-size: 1.1rem;
+    }
+
+    .promise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-hero {
+        padding: 65px 5%;
+    }
+}
+
+/* 17. CELULARES PEQUEÑOS */
+
+@media (max-width: 420px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 260px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .theme-btn {
+        flex: 1 1 42%;
+    }
+
+    .btn {
+        padding: 12px 17px;
+    }
+
+    .content-card {
+        padding: 20px;
+    }
+}
+
+/* 18. ACCESIBILIDAD: MENOS MOVIMIENTO */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mini Bear: ropa, accesorios y regalos adorables para bebés.">
+    <title>Mini Bear | Un mundo de ternura</title>
+    <link rel="stylesheet" href="./css/main.css">
+  
+</head>
+<body class="theme-rainbow">
+
+    <header class="site-header">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🧸</span>
+            <span>Mini Bear<small>Un mundo de ternura</small></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+        <nav class="navigation" id="navigation">
+            <a href="index.html" class="active">Inicio</a>
+            <a href="nosotros.html">Quiénes somos</a>
+            <a href="portafolio.html">Productos</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <span class="eyebrow">♡ Hecho con amor para los más pequeños ♡</span>
+                <h1>Un universo de<br><span>ternura y color</span></h1>
+                <p>
+                    En Mini Bear encontrarás ropita adorable,
+                    accesorios delicados y regalitos especiales
+                    para acompañar los primeros momentos de tu bebé.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="portafolio.html" class="btn btn-primary">
+                        Ver productos ♡
+                    </a>
+                    <a href="nosotros.html" class="btn btn-secondary">
+                        Conócenos
+                    </a>
+                </div>
+
+                <div class="hero-notes">
+                    <span>☁️ Suavidad</span>
+                    <span>🌈 Alegría</span>
+                    <span>💗 Mucho amor</span>
+                </div>
+            </div>
+
+            <div class="hero-art" aria-label="Osito y arcoíris decorativos">
+                <div class="rainbow-art">🌈</div>
+                <div class="hero-bear">🧸</div>
+                <span class="floating-cloud cloud-one">☁️</span>
+                <span class="floating-cloud cloud-two">☁️</span>
+                <span class="floating-star star-one">✦</span>
+                <span class="floating-star star-two">✧</span>
+                <span class="floating-heart">♡</span>
+            </div>
+        </section>
+
+        <section class="weather-section" id="ambientes">
+            <div class="section-heading">
+                <span class="eyebrow">✨ Un mundo mágico</span>
+                <h2>¡Elige tu ambiente favorito!</h2>
+                <p>Cambia los colores y descubre la magia de Mini Bear.</p>
+            </div>
+
+            <div class="theme-buttons">
+                <button class="theme-btn" data-theme="rainbow">
+                    🌈 Arcoíris
+                </button>
+                <button class="theme-btn" data-theme="dark">
+                    🌙 Noche mágica
+                </button>
+                <button class="theme-btn" data-theme="rain">
+                    🌧️ Día lluvioso
+                </button>
+                <button class="theme-btn" data-theme="snow">
+                    ⛄ Invierno
+                </button>
+                <button class="theme-btn" data-theme="autumn">
+                    🍂 Otoño
+                </button>
+                <button class="theme-btn" data-theme="spring">
+                    🦋 Primavera
+                </button>
+            </div>
+
+            <div class="magic-scene" id="magicScene">
+                <div class="scene-message">
+                    <span id="sceneEmoji">🌈</span>
+                    <h3 id="sceneTitle">Un arcoíris de felicidad</h3>
+                    <p id="sceneDescription">
+                        ¡Toca cualquier parte de este mundo para crear auroras de colores!
+                    </p>
+                </div>
+                <div class="scene-decoration" id="sceneDecoration" aria-hidden="true">
+                    ☁️ 🌈 ☁️
+                </div>
+                <div class="magic-effects" id="magicEffects" aria-hidden="true"></div>
+            </div>
+            <p class="interaction-tip">👆 Toca la escena para descubrir la magia.</p>
+        </section>
+
+        <section class="products-section" id="productos">
+            <div class="section-heading">
+                <span class="eyebrow">🛍️ Pequeñas prendas, grandes sonrisas</span>
+                <h2>Favoritos de Mini Bear</h2>
+                <p>Detalles tiernos para acompañar cada aventura de tu bebé.</p>
+            </div>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=80"
+                             alt="Ropita delicada para bebé" loading="lazy">
+                        <span class="product-label">Favorito</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Conjunto Dulce Nube</h3>
+                        <p>Conjunto cómodo para los días de ternura.</p>
+                        <strong>$55.000 COP</strong>
+                        <a href="portafolio.html" class="product-link">Ver producto →</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=700&q=80"
+                             alt="Accesorios suaves para bebé" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Kit Pequeño Osito</h3>
+                        <p>Un detalle encantador para regalar.</p>
+                        <strong>$38.000 COP</strong>
+                        <a href="portafolio.html" class="product-link">Ver producto →</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=700&q=80"
+                             alt="Bebé con una manta suave" loading="lazy">
+                        <span class="product-label">Especial</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Mantita Abrazo</h3>
+                        <p>Un complemento acogedor para descansar.</p>
+                        <strong>$45.000 COP</strong>
+                        <a href="portafolio.html" class="product-link">Ver producto →</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=700&q=80"
+                             alt="Ropa infantil de estilo delicado" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestidito Arcoíris</h3>
+                        <p>Un diseño alegre para ocasiones especiales.</p>
+                        <strong>$62.000 COP</strong>
+                        <a href="portafolio.html" class="product-link">Ver producto →</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="center-button">
+                <a href="portafolio.html" class="btn btn-primary">
+                    Descubrir todos los productos ♡
+                </a>
+            </div>
+        </section>
+
+        <section class="promise-section">
+            <div class="section-heading">
+                <span class="eyebrow">💖 Nuestra promesa</span>
+                <h2>Creado pensando en tu bebé</h2>
+            </div>
+
+            <div class="promise-grid">
+                <article class="promise-card">
+                    <span>☁️</span>
+                    <h3>Suavidad</h3>
+                    <p>Prendas pensadas para acompañar sus pequeños momentos.</p>
+                </article>
+                <article class="promise-card">
+                    <span>🎁</span>
+                    <h3>Regalos especiales</h3>
+                    <p>Detalles dulces para celebrar nuevas aventuras.</p>
+                </article>
+                <article class="promise-card">
+                    <span>🌈</span>
+                    <h3>Mucha alegría</h3>
+                    <p>Colores y ternura para llenar de sonrisas cada día.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div>
+                <span class="eyebrow">♡ Gracias por visitarnos ♡</span>
+                <h2>Los pequeños momentos<br>son los más grandes.</h2>
+                <p>Encuentra ese detalle especial en Mini Bear.</p>
+            </div>
+            <a href="contacto.html" class="btn btn-primary">Contáctanos 💌</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a href="index.html" class="footer-logo">🧸 Mini Bear</a>
+        <p>Un mundo de ternura para los más pequeños. 🌈</p>
+        <div class="footer-links">
+            <a href="nosotros.html">Quiénes somos</a>
+            <a href="portafolio.html">Productos</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+        <small>© <span id="currentYear">2026</span> Mini Bear. Todos los derechos reservados.</small>
+    </footer>
+<script src="./js/main.js"></script>
+</body>
+</html>
